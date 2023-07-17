@@ -32,6 +32,10 @@
 		F2C1A1472A65678C0035C7DF /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1462A65678C0035C7DF /* ReviewListView.swift */; };
 		F2C1A1492A6568450035C7DF /* TrendingCreatorsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1482A6568450035C7DF /* TrendingCreatorsCellView.swift */; };
 		F2C1A14B2A6568E20035C7DF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A14A2A6568E20035C7DF /* UserViewModel.swift */; };
+		F2C1A14E2A656EFF0035C7DF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A14D2A656EFF0035C7DF /* SignUpView.swift */; };
+		F2C1A1502A656F0F0035C7DF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A14F2A656F0F0035C7DF /* SignInView.swift */; };
+		F2C1A1522A656F330035C7DF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1512A656F330035C7DF /* LoginViewModel.swift */; };
+		F2C1A1542A65894F0035C7DF /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1532A65894F0035C7DF /* PhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		F2C1A1462A65678C0035C7DF /* ReviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListView.swift; sourceTree = "<group>"; };
 		F2C1A1482A6568450035C7DF /* TrendingCreatorsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCreatorsCellView.swift; sourceTree = "<group>"; };
 		F2C1A14A2A6568E20035C7DF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		F2C1A14D2A656EFF0035C7DF /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F2C1A14F2A656F0F0035C7DF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F2C1A1512A656F330035C7DF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F2C1A1532A65894F0035C7DF /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 		7539DE5A2A49993A0015FA4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2C1A14C2A656C1C0035C7DF /* Login */,
 				7539DE4F2A49948D0015FA4F /* MainView.swift */,
 				F2C1A1482A6568450035C7DF /* TrendingCreatorsCellView.swift */,
 				7539DE532A4995EA0015FA4F /* CategoryListView.swift */,
@@ -209,8 +218,19 @@
 				F2C1A13F2A6560CA0035C7DF /* CategoryViewModel.swift */,
 				F2C1A1432A65672F0035C7DF /* DestinationDetailsViewModel.swift */,
 				F2C1A14A2A6568E20035C7DF /* UserViewModel.swift */,
+				F2C1A1512A656F330035C7DF /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F2C1A14C2A656C1C0035C7DF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F2C1A14D2A656EFF0035C7DF /* SignUpView.swift */,
+				F2C1A14F2A656F0F0035C7DF /* SignInView.swift */,
+				F2C1A1532A65894F0035C7DF /* PhotoView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C1A1522A656F330035C7DF /* LoginViewModel.swift in Sources */,
 				7539DE5F2A499BE60015FA4F /* CarouselHeaderView.swift in Sources */,
 				7539DE562A4996F40015FA4F /* CategoriesImageAndLabelView.swift in Sources */,
 				F2C1A1442A65672F0035C7DF /* DestinationDetailsViewModel.swift in Sources */,
@@ -353,15 +374,18 @@
 				7539DE832A49BF4F0015FA4F /* ProfileView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
+				F2C1A14E2A656EFF0035C7DF /* SignUpView.swift in Sources */,
 				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
 				F2C1A1422A6566DA0035C7DF /* Review.swift in Sources */,
 				F2C1A1402A6560CA0035C7DF /* CategoryViewModel.swift in Sources */,
+				F2C1A1542A65894F0035C7DF /* PhotoView.swift in Sources */,
 				F2C1A14B2A6568E20035C7DF /* UserViewModel.swift in Sources */,
 				F2C1A1492A6568450035C7DF /* TrendingCreatorsCellView.swift in Sources */,
 				7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */,
 				7539DE502A49948D0015FA4F /* MainView.swift in Sources */,
 				7539DE522A4995CB0015FA4F /* Destinations.swift in Sources */,
 				7539DE582A4997BD0015FA4F /* DestinationListView.swift in Sources */,
+				F2C1A1502A656F0F0035C7DF /* SignInView.swift in Sources */,
 				7539DE262A4994650015FA4F /* TrendyTravelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
