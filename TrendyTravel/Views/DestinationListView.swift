@@ -42,7 +42,7 @@ class CategoryDetailsViewModel: ObservableObject {
 }
 
 
-struct CategoryDetailView: View {
+struct DestinationListView: View {
     let name: String
     @EnvironmentObject var vm: CategoryDetailsViewModel
     
@@ -66,10 +66,10 @@ struct CategoryDetailView: View {
     }
 }
 
-struct CategoryDetailView_Previews: PreviewProvider {
+struct DestinationListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CategoryDetailView(name: "culture")
+            DestinationListView(name: "culture")
                 .environmentObject(CategoryDetailsViewModel())
         }
     }

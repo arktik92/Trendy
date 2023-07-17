@@ -13,7 +13,7 @@ struct TrendyTravelApp: App {
     @StateObject var catVm = CategoryDetailsViewModel()
     var body: some Scene {
         WindowGroup {
-            DestinationsListView()
+            MainView()
                 .environmentObject(userVm)
                 .environmentObject(catVm)
         }

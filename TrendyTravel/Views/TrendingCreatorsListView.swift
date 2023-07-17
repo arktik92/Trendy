@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TrendingCreatorsView: View {
+struct TrendingCreatorsListView: View {
     @EnvironmentObject var vm: UserViewModel
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,9 +27,9 @@ struct TrendingCreatorsView: View {
                 HStack(alignment: .top, spacing: 40) {
                     ForEach(vm.users, id: \.self) { user in
                         NavigationLink {
-                            UserDetailsView(user: user)
+                            ProfileView(user: user)
                         } label: {
-                            DiscoverUserView(user: user)
+                            TrendingCreatorsCellView(user: user)
                         }
                         
                     }
@@ -42,29 +42,11 @@ struct TrendingCreatorsView: View {
     }
 }
 
-struct DiscoverUserView: View {
-    let user: User
-    var body: some View {
-        VStack {
-            Image(user.profilImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .cornerRadius(.infinity)
 
-            Text(user.firstName)
-                .font(.system(size: 11, weight: .semibold))
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(.label))
-        }
-        .frame(width: 60)
-        .shadow(color: .gray, radius: 2, x: 0, y: 2)
-    }
-}
 
-struct TrendingCreatorsView_Previews: PreviewProvider {
+struct TrendingCreatorsListView_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingCreatorsView()
+        TrendingCreatorsListView()
             .environmentObject(UserViewModel())
     }
 }

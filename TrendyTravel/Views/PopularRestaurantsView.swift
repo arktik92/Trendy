@@ -26,7 +26,7 @@ struct PopularRestaurantsView: View {
                 HStack(spacing: 8) {
                     ForEach(restaurants, id: \.self) { restaurant in
                         NavigationLink {
-                            RestaurantDetailsView(restaurant: restaurant, reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
+                            DestinationDetailsView(restaurant: restaurant, reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
                         } label: {
                             RestaurantTile(restaurant: restaurant)
                                 .foregroundColor(Color(.label))

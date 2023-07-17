@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DestinationsListView: View {
+struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,11 +28,11 @@ struct DestinationsListView: View {
                     .background(Color(.init(white: 1, alpha: 0.3)))
                     .cornerRadius(10)
                     .padding(16)
-                        DestinationsCategoriesView()
+                        CategoryListView()
                         VStack {
                             PopularDestinationsView()
                             PopularRestaurantsView()
-                            TrendingCreatorsView()
+                            TrendingCreatorsListView()
                         }
                         .background(Color.white)
                         .cornerRadius(16)
@@ -45,15 +45,15 @@ struct DestinationsListView: View {
     }
 }
 
-struct DestinationsListView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
 //    @EnvironmentObject var userVm = UserViewModel()
     static var previews: some View {
-        DestinationsListView()
+        MainView()
             .colorScheme(.light)
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())
             .environmentObject(CategoryDetailsViewModel())
-        DestinationsListView()
+        MainView()
             .colorScheme(.dark)
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())

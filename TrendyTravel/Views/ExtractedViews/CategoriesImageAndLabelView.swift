@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DestinationsCategoriesImageAndLabelView: View {
+struct CategoriesImageAndLabelView: View {
     let image: String
     let title: String
     var body: some View {
@@ -32,7 +32,7 @@ struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
         NavigationView {
             ZStack {
                 Color.cyan
-                DestinationsCategoriesImageAndLabelView(image: "paintpalette.fill", title: "Art")
+                CategoriesImageAndLabelView(image: "paintpalette.fill", title: "Art")
             }
         }
     }
