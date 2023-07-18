@@ -11,6 +11,7 @@ import PhotosUI
 struct SignUpView: View {
     @ObservedObject var viewModel = LoginViewModel()
     @Environment(\.dismiss) var dismiss
+    @State private var image = UIImage(named: "")
     
     
     
@@ -31,7 +32,7 @@ struct SignUpView: View {
                 
                 
                 VStack {
-                    PhotoView()
+                    PhotoView(image: $image)
                         .padding(30)
                     
                     TextField("First name", text: $viewModel.firstName)
@@ -54,8 +55,13 @@ struct SignUpView: View {
                     if viewModel.checkSignUpTextFields() == true {
                         // TODO: - Action Creation User
                         Task {
-                             viewModel.SignUp()
+                            if let image {
+                                viewModel.image = image                                
+                            }
+                            viewModel.uploadImageToServer()
                         }
+                        
+                        
                         dismiss()
                     } else {
                         // TODO: - Afficher alert

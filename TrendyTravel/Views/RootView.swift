@@ -7,14 +7,21 @@
 
 import SwiftUI
 
-struct Root: View {
+struct RootView: View {
+    @State var isConnected: Bool = false
+    @ObservedObject var viewModel = LoginViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if !isConnected {
+            SignInView(isConnected: $isConnected)
+        } else {
+            MainView()
+        }
+            
     }
 }
 
-struct Root_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Root()
+        RootView()
     }
 }

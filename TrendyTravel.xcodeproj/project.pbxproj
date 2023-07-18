@@ -26,6 +26,7 @@
 		7539DE832A49BF4F0015FA4F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE822A49BF4F0015FA4F /* ProfileView.swift */; };
 		758A0E802A4D64EB008E22FC /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E7F2A4D64EB008E22FC /* Posts.swift */; };
 		758A0E9E2A4DA6F6008E22FC /* DestinationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E9D2A4DA6F6008E22FC /* DestinationDetailsView.swift */; };
+		F2355BB12A66B5CC00E7AAAA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2355BB02A66B5CC00E7AAAA /* RootView.swift */; };
 		F2C1A1402A6560CA0035C7DF /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A13F2A6560CA0035C7DF /* CategoryViewModel.swift */; };
 		F2C1A1422A6566DA0035C7DF /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1412A6566DA0035C7DF /* Review.swift */; };
 		F2C1A1442A65672F0035C7DF /* DestinationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1432A65672F0035C7DF /* DestinationDetailsViewModel.swift */; };
@@ -36,6 +37,8 @@
 		F2C1A1502A656F0F0035C7DF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A14F2A656F0F0035C7DF /* SignInView.swift */; };
 		F2C1A1522A656F330035C7DF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1512A656F330035C7DF /* LoginViewModel.swift */; };
 		F2C1A1542A65894F0035C7DF /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1532A65894F0035C7DF /* PhotoView.swift */; };
+		F2C1A1562A6671550035C7DF /* DataImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1552A6671550035C7DF /* DataImageResponse.swift */; };
+		F2C1A1582A6673780035C7DF /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A1572A6673780035C7DF /* Media.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,7 @@
 		7539DE822A49BF4F0015FA4F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		758A0E7F2A4D64EB008E22FC /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		758A0E9D2A4DA6F6008E22FC /* DestinationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsView.swift; sourceTree = "<group>"; };
+		F2355BB02A66B5CC00E7AAAA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F2C1A13F2A6560CA0035C7DF /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		F2C1A1412A6566DA0035C7DF /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F2C1A1432A65672F0035C7DF /* DestinationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -88,6 +92,9 @@
 		F2C1A14F2A656F0F0035C7DF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F2C1A1512A656F330035C7DF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F2C1A1532A65894F0035C7DF /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		F2C1A1552A6671550035C7DF /* DataImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImageResponse.swift; sourceTree = "<group>"; };
+		F2C1A1572A6673780035C7DF /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		F2C1A15D2A6692180035C7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +145,7 @@
 		7539DE242A4994650015FA4F /* TrendyTravel */ = {
 			isa = PBXGroup;
 			children = (
+				F2C1A15D2A6692180035C7DF /* Info.plist */,
 				7539DE252A4994650015FA4F /* TrendyTravelApp.swift */,
 				F2C1A13E2A6531320035C7DF /* ViewModels */,
 				7539DE592A49980D0015FA4F /* Models */,
@@ -180,6 +188,8 @@
 				7539DE802A49B84A0015FA4F /* Users.swift */,
 				758A0E7F2A4D64EB008E22FC /* Posts.swift */,
 				F2C1A1412A6566DA0035C7DF /* Review.swift */,
+				F2C1A1552A6671550035C7DF /* DataImageResponse.swift */,
+				F2C1A1572A6673780035C7DF /* Media.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +197,7 @@
 		7539DE5A2A49993A0015FA4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2355BB02A66B5CC00E7AAAA /* RootView.swift */,
 				F2C1A14C2A656C1C0035C7DF /* Login */,
 				7539DE4F2A49948D0015FA4F /* MainView.swift */,
 				F2C1A1482A6568450035C7DF /* TrendingCreatorsCellView.swift */,
@@ -371,7 +382,9 @@
 				F2C1A1472A65678C0035C7DF /* ReviewListView.swift in Sources */,
 				7539DE542A4995EA0015FA4F /* CategoryListView.swift in Sources */,
 				7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsListView.swift in Sources */,
+				F2C1A1562A6671550035C7DF /* DataImageResponse.swift in Sources */,
 				7539DE832A49BF4F0015FA4F /* ProfileView.swift in Sources */,
+				F2C1A1582A6673780035C7DF /* Media.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
 				F2C1A14E2A656EFF0035C7DF /* SignUpView.swift in Sources */,
@@ -384,6 +397,7 @@
 				7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */,
 				7539DE502A49948D0015FA4F /* MainView.swift in Sources */,
 				7539DE522A4995CB0015FA4F /* Destinations.swift in Sources */,
+				F2355BB12A66B5CC00E7AAAA /* RootView.swift in Sources */,
 				7539DE582A4997BD0015FA4F /* DestinationListView.swift in Sources */,
 				F2C1A1502A656F0F0035C7DF /* SignInView.swift in Sources */,
 				7539DE262A4994650015FA4F /* TrendyTravelApp.swift in Sources */,
@@ -548,6 +562,7 @@
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrendyTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +593,7 @@
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrendyTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

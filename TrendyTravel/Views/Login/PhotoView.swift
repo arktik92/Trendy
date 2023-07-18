@@ -10,8 +10,10 @@ import PhotosUI
 
 struct PhotoView: View {
     // MARK: - Properties
-    @State private var avatarItem: PhotosPickerItem?
+    @State var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image?
+    @Binding var image: UIImage?
+    @ObservedObject var viewModel = LoginViewModel()
     
     var body: some View {
            ZStack {
@@ -59,6 +61,7 @@ struct PhotoView: View {
                    if let data = try? await avatarItem?.loadTransferable(type: Data.self) {
                        if let uiImage = UIImage(data: data) {
                            avatarImage = Image(uiImage: uiImage)
+                           image = uiImage
                            return
                        }
                    }
@@ -69,8 +72,8 @@ struct PhotoView: View {
        }
 }
 
-struct PhotoView_Previews: PreviewProvider {
-    static var previews: some View {
-        PhotoView()
-    }
-}
+//struct PhotoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PhotoView()
+//    }
+//}

@@ -10,6 +10,7 @@ import SwiftUI
 struct SignInView: View {
     @ObservedObject var viewModel = LoginViewModel()
     @State var signUpView: Bool = false
+    @Binding var isConnected: Bool
     
     var body: some View {
         ZStack {
@@ -46,8 +47,7 @@ struct SignInView: View {
                 
                 Button {
                     if viewModel.checkSignInTextFields() {
-                        // TODO: - Action connextion User
-                        
+                        isConnected = viewModel.signIn()
                     } else {
                         // TODO: - Afficher alert
                     }
@@ -61,6 +61,9 @@ struct SignInView: View {
                         }
                 }
             }
+            .onAppear {
+                viewModel.signIn()
+            }
             .padding()
             .textFieldStyle(.roundedBorder)
         }
@@ -72,6 +75,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(isConnected: .constant(false))
     }
 }

@@ -14,17 +14,33 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                Image("\(user.profilImage)")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80)
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .overlay(
-                        Circle()
-                            .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
-                            .frame(width: 80, height: 80)
-                    )
+                    AsyncImage(url: URL(string: user.profilImage)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                                    .frame(width: 80, height: 80)
+                            )
+                    } placeholder: {
+                        Image("\(user.profilImage)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                                    .frame(width: 80, height: 80)
+                            )
+                        
+                    }
+                
                 Text("\(user.firstName) \(user.lastName)")
                     .font(.system(size: 14, weight: .semibold))
                 
@@ -86,10 +102,10 @@ struct ProfileView: View {
                 ForEach(user.posts, id: \.self) { post in
                     VStack(alignment: .leading) {
                         Image(post.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 200)
-                                .clipped()
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 200)
+                            .clipped()
                         HStack(alignment: .top) {
                             Image(user.profilImage)
                                 .resizable()
@@ -113,7 +129,7 @@ struct ProfileView: View {
                             }
                         }
                         .padding(.horizontal, 8)
-                       
+                        
                         HStack {
                             Button {
                                 // action pour ajouter des likes
