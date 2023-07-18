@@ -11,11 +11,24 @@ struct TrendingCreatorsCellView: View {
     let user: User
     var body: some View {
         VStack {
-            Image(user.profilImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .cornerRadius(.infinity)
+            if user.profilImage.hasPrefix("http") {
+                AsyncImage(url: URL(string: user.profilImage)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(.infinity)
+                } placeholder: {
+                    Color.gray
+                }
+            } else {
+                Image(user.profilImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 80, height: 80)
+                    .cornerRadius(.infinity)
+            }
+        
 
             Text(user.firstName)
                 .font(.system(size: 11, weight: .semibold))
