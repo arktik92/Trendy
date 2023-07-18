@@ -62,7 +62,7 @@ struct SignInView: View {
                 }
             }
             .onAppear {
-                viewModel.signIn()
+                isConnected = viewModel.signIn()
             }
             .padding()
             .textFieldStyle(.roundedBorder)
