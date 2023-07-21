@@ -7,67 +7,6 @@
 
 import SwiftUI
 
-//struct MainView: View {
-//    var body: some View {
-//
-//        NavigationView {
-//            ZStack {
-//                LinearGradient(gradient: Gradient(colors: [.cyan, .mint]), startPoint: .top,
-//                               endPoint: .center)
-//                .ignoresSafeArea()
-//                Color.white
-//                    .offset(y: 400)
-//                ScrollView(showsIndicators: false) {
-//                    HStack {
-//                        Image(systemName: "magnifyingglass")
-//                        Text("Where do you want to go?")
-//                        Spacer()
-//                    }
-//                    .font(.system(size: 14, weight: .semibold))
-//                    .foregroundColor(.white)
-//                    .padding()
-//                    .background(Color(.init(white: 1, alpha: 0.3)))
-//                    .cornerRadius(10)
-//                    .padding(16)
-//                        CategoryListView()
-//                        VStack {
-//                            PopularDestinationsView()
-//                            PopularRestaurantsView()
-//                            TrendingCreatorsListView()
-//                        }
-//                        .background(Color.white)
-//                        .cornerRadius(16)
-//                        .padding(.top, 32)
-//                    }
-//
-//                .navigationTitle("Discover")
-//            }
-//        }
-//    }
-//        .onAppear {
-//                userVm.getUsers {
-//                    // Mettre à jour les utilisateurs dans la vue ici
-//                }
-//}
-//
-//
-//
-//struct MainView_Previews: PreviewProvider {
-////    @EnvironmentObject var userVm = UserViewModel()
-//    static var previews: some View {
-//        MainView()
-//            .colorScheme(.light)
-//            .environmentObject(UserViewModel())
-//            .environmentObject(DestinationViewModel())
-//            .environmentObject(CategoryDetailsViewModel())
-//        MainView()
-//            .colorScheme(.dark)
-//            .environmentObject(UserViewModel())
-//            .environmentObject(DestinationViewModel())
-//            .environmentObject(CategoryDetailsViewModel())
-//    }
-//}
-
 struct MainView: View {
 
     @EnvironmentObject var userVm: UserViewModel
@@ -126,7 +65,7 @@ struct MainView: View {
                         VStack {
                             PopularDestinationsView(destinations: $destinations)
                             PopularRestaurantsView(activities: activities)
-                            TrendingCreatorsListView()
+                            TrendingCreatorsListView(currentUser: $currentUser)
                         }
                         .background(Color.white)
                         .cornerRadius(16)
@@ -138,7 +77,7 @@ struct MainView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
-                        ProfileView(user: currentUser)
+                        CurrentUserProfileView(user: currentUser, currentUser: currentUser)
                     } label: {
                         Image(systemName: "person.circle.fill")
                             .foregroundColor(.white)
@@ -155,11 +94,6 @@ struct MainView: View {
 
             }
         }
-//        .onAppear {
-//            userVm.getUsers {
-//                // Mettre à jour les utilisateurs dans la vue ici
-//            }
-//        }
     }
     var searchResults: [Destination] {
            if searchText.isEmpty {
