@@ -6,17 +6,35 @@
 //
 
 import SwiftUI
+//
+//@main
+//struct TrendyTravelApp: App {
+//    @StateObject var userVm = UserViewModel()
+//    @StateObject var catVm = CategoryDetailsViewModel()
+//    var body: some Scene {
+//        WindowGroup {
+//            MainView()
+//                .environmentObject(userVm)
+//                .environmentObject(catVm)
+//        }
+//    }
+//}
 
 @main
 struct TrendyTravelApp: App {
     @StateObject var userVm = UserViewModel()
-    @StateObject var catVm = CategoryDetailsViewModel()
+       @StateObject var postVm = PostViewModel()
+
     var body: some Scene {
         WindowGroup {
             RootView()
 //            MainView()
                 .environmentObject(userVm)
-                .environmentObject(catVm)
+                .environmentObject(postVm)
+              .onAppear {
+                  userVm.getUsers() // Charger les données initiales
+               }
         }
     }
 }
+
