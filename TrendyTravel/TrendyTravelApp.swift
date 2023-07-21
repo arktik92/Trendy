@@ -27,7 +27,8 @@ struct TrendyTravelApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            RootView()
+//            MainView()
                 .environmentObject(userVm)
                 .environmentObject(postVm)
               .onAppear {

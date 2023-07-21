@@ -11,6 +11,7 @@ struct TrendingCreatorsCellView: View {
     let user: User
     var body: some View {
         VStack {
+
             AsyncImage(url: URL(string: user.profilImage)) { image in
                 image
                     .resizable()
@@ -19,13 +20,14 @@ struct TrendingCreatorsCellView: View {
                     .cornerRadius(.infinity)
                 
             } placeholder: {
+
                 Image(user.profilImage)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
                     .cornerRadius(.infinity)
             }
-                
+
 
             Text(user.firstName)
                 .font(.system(size: 11, weight: .semibold))

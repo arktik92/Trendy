@@ -20,21 +20,27 @@ import SwiftUI
 //}
 
 struct DestinationDetailsView: View {
-    @ObservedObject var vm = DestinationDetailsViewModel()
-    let restaurant: Restaurant
+//    @ObservedObject var vm = DestinationDetailsViewModel()
+    let activity: Activity
     var reviews: [Review]
     var body: some View{
         ScrollView {
             ZStack(alignment: .bottomLeading) {
-                Image(restaurant.image)
-                    .resizable()
-                    .scaledToFill()
+                AsyncImage(url: URL(string: activity.imageName)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } placeholder: {
+                    Image(activity.imageName)
+                        .resizable()
+                        .scaledToFill()
+                }
                 
                 LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black]), startPoint: .center, endPoint: .bottom)
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(restaurant.name)
+                        Text(activity.name)
                             .foregroundColor(.white)
                             .font(.system(size: 18, weight: .bold))
                         HStack {
@@ -62,7 +68,7 @@ struct DestinationDetailsView: View {
             }
             .padding(.top)
             .padding(.horizontal)
-            Text(vm.details?.description ?? "")
+//            Text(vm.destinations.description)
                 .padding(.top, 8)
                 .font(.system(size: 14, weight: .regular))
                 .padding(.horizontal)
@@ -82,7 +88,7 @@ struct DestinationDetailsView: View {
 struct DestinationDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DestinationDetailsView(restaurant: .init(name: "Japan's Finest Tapas", image: "tapas"), reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
+            DestinationDetailsView(activity: Activity(id: 1, category: "", name: "", imageName: "", link: "", price: "", latitude: 1, longitude: 1, description: "", rating: 1, destinationID: 1, createdAt: "", updatedAt: ""), reviews: [Review(id: 1, content: "", rating: 1, userID: 1, activityID: 1)])
         }
     }
 }

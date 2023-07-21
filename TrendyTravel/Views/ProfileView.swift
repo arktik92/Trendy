@@ -272,7 +272,51 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
+
                 UserDetailView(user: user)
+
+                    AsyncImage(url: URL(string: user.profilImage)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                                    .frame(width: 80, height: 80)
+                            )
+                    } placeholder: {
+                        Image("\(user.profilImage)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                                    .frame(width: 80, height: 80)
+                            )
+                        
+                    }
+                
+                Text("\(user.firstName) \(user.lastName)")
+                    .font(.system(size: 14, weight: .semibold))
+                
+                HStack {
+                    Text("@\(user.pseudo) •")
+                    Image(systemName: "hand.thumbsup.fill")
+                        .font(.system(size: 10, weight: .semibold))
+                    Text("2541")
+                }
+                .font(.system(size: 12, weight: .regular))
+                
+                Text("YouTuber, Vlogger, Travel Creator")
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundColor(Color(.lightGray))
+
                 
                 HStack(spacing: 12) {
                     if user.id != currentUser.id {
@@ -374,7 +418,9 @@ struct ProfileView: View {
                         HStack(alignment: .top) {
                             // Contenu du poste (Titre, hashtags, etc.)
                         }
-                        // Boutons Edit et Delete pour l'utilisateur actuel
+
+                        .padding(.horizontal, 8)
+                        
                         HStack {
                             Button(action: {
                                 showModal = true
