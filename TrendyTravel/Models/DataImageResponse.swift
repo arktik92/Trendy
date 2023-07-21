@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 // MARK: - DataResponse
 struct DataImageResponse: Codable {
     var data: String

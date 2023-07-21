@@ -11,6 +11,7 @@ struct SignInView: View {
     @ObservedObject var viewModel = LoginViewModel()
     @State var signUpView: Bool = false
     @Binding var isConnected: Bool
+    @Binding var currentUser: User
     
     var body: some View {
         ZStack {
@@ -48,6 +49,7 @@ struct SignInView: View {
                 Button {
                     if viewModel.checkSignInTextFields() {
                         isConnected = viewModel.signIn()
+                        currentUser = viewModel.getCurrentUser()
                     } else {
                         // TODO: - Afficher alert
                     }
@@ -75,6 +77,6 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(isConnected: .constant(false))
+        SignInView(isConnected: .constant(false),currentUser: .constant(User(id: 1, firstName: "", lastName: "", description: "", profilImage: "", pseudo: "", password: "", email: "", posts: [Post(id: 1, title: "", imageName: "", hashtags: [""], userID: 1)])))
     }
 }

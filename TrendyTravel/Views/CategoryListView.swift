@@ -14,7 +14,7 @@ struct CategoryListView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categoryViewModel.categories, id: \.self) { category in
                     NavigationLink {
-                        DestinationListView(name: category.name)
+//                        DestinationListView(name: category.name)
                     } label: {
                         CategoriesImageAndLabelView(image: category.imageName, title: category.name)
                     }
