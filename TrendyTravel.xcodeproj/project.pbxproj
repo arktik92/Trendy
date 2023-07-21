@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		538A2D3C2A682EB60025CB56 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A2D3B2A682EB60025CB56 /* PostViewModel.swift */; };
+		538A2D3E2A6A7CBF0025CB56 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A2D3D2A6A7CBF0025CB56 /* UserDetailView.swift */; };
 		7539DE262A4994650015FA4F /* TrendyTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE252A4994650015FA4F /* TrendyTravelApp.swift */; };
 		7539DE2A2A4994670015FA4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7539DE292A4994670015FA4F /* Assets.xcassets */; };
 		7539DE2D2A4994670015FA4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7539DE2C2A4994670015FA4F /* Preview Assets.xcassets */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		538A2D3A2A66A6030025CB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		538A2D3B2A682EB60025CB56 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		538A2D3D2A6A7CBF0025CB56 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		7539DE222A4994650015FA4F /* TrendyTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendyTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7539DE252A4994650015FA4F /* TrendyTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyTravelApp.swift; sourceTree = "<group>"; };
 		7539DE292A4994670015FA4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 		7539DE242A4994650015FA4F /* TrendyTravel */ = {
 			isa = PBXGroup;
 			children = (
+				538A2D3A2A66A6030025CB56 /* Info.plist */,
 				7539DE252A4994650015FA4F /* TrendyTravelApp.swift */,
 				F2C1A13E2A6531320035C7DF /* ViewModels */,
 				7539DE592A49980D0015FA4F /* Models */,
@@ -189,6 +195,7 @@
 				758A0E9D2A4DA6F6008E22FC /* DestinationDetailsView.swift */,
 				7539DE7E2A49B7EB0015FA4F /* TrendingCreatorsListView.swift */,
 				7539DE822A49BF4F0015FA4F /* ProfileView.swift */,
+				538A2D3D2A6A7CBF0025CB56 /* UserDetailView.swift */,
 				7539DE5B2A4999810015FA4F /* ExtractedViews */,
 			);
 			path = Views;
@@ -209,6 +216,7 @@
 				F2C1A13F2A6560CA0035C7DF /* CategoryViewModel.swift */,
 				F2C1A1432A65672F0035C7DF /* DestinationDetailsViewModel.swift */,
 				F2C1A14A2A6568E20035C7DF /* UserViewModel.swift */,
+				538A2D3B2A682EB60025CB56 /* PostViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -353,11 +361,13 @@
 				7539DE832A49BF4F0015FA4F /* ProfileView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
+				538A2D3E2A6A7CBF0025CB56 /* UserDetailView.swift in Sources */,
 				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
 				F2C1A1422A6566DA0035C7DF /* Review.swift in Sources */,
 				F2C1A1402A6560CA0035C7DF /* CategoryViewModel.swift in Sources */,
 				F2C1A14B2A6568E20035C7DF /* UserViewModel.swift in Sources */,
 				F2C1A1492A6568450035C7DF /* TrendingCreatorsCellView.swift in Sources */,
+				538A2D3C2A682EB60025CB56 /* PostViewModel.swift in Sources */,
 				7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */,
 				7539DE502A49948D0015FA4F /* MainView.swift in Sources */,
 				7539DE522A4995CB0015FA4F /* Destinations.swift in Sources */,
@@ -524,12 +534,13 @@
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrendyTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,12 +565,13 @@
 				DEVELOPMENT_TEAM = CDT2LZXUGZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TrendyTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +593,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.julieclz.TrendyTravelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -600,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.julieclz.TrendyTravelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.julieclz.TrendyTravelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,6 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.julieclz.TrendyTravelUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
