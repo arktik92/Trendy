@@ -20,8 +20,8 @@ class LoginViewModel: ObservableObject {
     @Published var profilImage: String = ""
     @Published var image = UIImage()
     @Published var isConnected = false
-    
-    
+//    @Published var currentUser: User = User(id: 1, firstName: "", lastName: "", description: "", profilImage: "", pseudo: "", password: "", email: "", posts: [Post(id: 1, title: "", imageName: "", hashtags: [""], userID: 1)])
+//    
     var users: [User] = []
     
     init() {
@@ -53,13 +53,31 @@ class LoginViewModel: ObservableObject {
         return isValid
     }
     
-    func signIn() -> Bool {
+    func getCurrentUser() -> User {
         var users = getAllUsersFromAPI()
         var emailAndPasswordIsValid = false
+        var currentUser: User = User(id: 0, firstName: "", lastName: "", description: "", profilImage: "", pseudo: "", password: "", email: "", posts: [Post(id: 0, title: "", imageName: "", hashtags: [""], userID: 0)])
     
         for user in users {
             if self.email == user.email {
                 if self.password == user.password {
+                    currentUser = user
+                    break
+                }
+            }
+        }
+        return currentUser
+    }
+    
+    func signIn() -> Bool {
+        var users = getAllUsersFromAPI()
+        var emailAndPasswordIsValid = false
+        var currentUser: User
+    
+        for user in users {
+            if self.email == user.email {
+                if self.password == user.password {
+                    currentUser = user
                     emailAndPasswordIsValid = true
                     break
                 } else {
