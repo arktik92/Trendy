@@ -18,6 +18,67 @@ final class TrendyTravelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+
+    func testSaveCredentialsToUserDefaults() {
+        // Créez une instance du view model à tester
+        let loginVM = LoginViewModel()
+        
+        // Définissez des valeurs de test pour email et mot de passe
+        let email = "test@mail.com"
+        let password = "passeword123"
+        
+        // Appelez la fonction saveCredentialsToUserDefaults avec les valeurs de test
+        loginVM.email = email
+        loginVM.password = password
+        loginVM.saveCredentialsToUserDefaults()
+        
+        // Vérifiez que les valeurs ont été correctement sauvegardées dans UserDefaults
+        XCTAssertEqual(UserDefaults.standard.string(forKey: "email"), email)
+        XCTAssertEqual(UserDefaults.standard.string(forKey: "password"), password)
+    }
+    
+    func testGetCredentialsToUserDefaults() {
+        // Créez une instance du view model à tester
+        let loginVM = LoginViewModel()
+        
+        // Définissez des valeurs de test pour email et mot de passe
+        let email = "test@mail.com"
+        let password = "passeword123"
+        
+        // Sauvegardez les valeurs de test dans UserDefaults
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(password, forKey: "password")
+        
+        // Appelez la fonction getCredentialsToUserDefaults
+        loginVM.getCredentialsToUserDefaults()
+        
+        // Vérifiez que les valeurs ont été correctement récupérées depuis UserDefaults
+        XCTAssertEqual(loginVM.email, email)
+        XCTAssertEqual(loginVM.password, password)
+    }
+    
+    func testSignUpSuccess() {
+        // Créez une instance du view model à tester
+        let loginVM = LoginViewModel()
+        //
+        _ = XCTestExpectation(description: "Sign Up Success")
+        
+        // Appel de la fonction
+        loginVM.SignUp()
+        
+    }
+    
+    func testGenerateBoundary() {
+        
+        let loginVM = LoginViewModel()
+        
+        // Appel de la fonction
+        let boundary = loginVM.generateBoundary()
+        
+        // Vérifiez que la chaîne de retour commence par "Boundary-"
+        XCTAssertTrue(boundary.hasPrefix("Boundary-"))
+    }
+
     func testCreatePost() {
             // Créez une instance de PostViewModel
             let postViewModel = PostViewModel()
@@ -97,6 +158,7 @@ final class TrendyTravelTests: XCTestCase {
             XCTAssertEqual(viewModel.users[0].posts[1].title, "Another Title")
             XCTAssertEqual(viewModel.users[0].posts[1].imageName, "another_image")
             XCTAssertEqual(viewModel.users[0].posts[1].hashtags, ["tag3"])
+
         }
 
     func testPerformanceExample() throws {
