@@ -117,7 +117,6 @@
 		F2C1A1532A65894F0035C7DF /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		F2C1A1552A6671550035C7DF /* DataImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImageResponse.swift; sourceTree = "<group>"; };
 		F2C1A1572A6673780035C7DF /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		F2C1A15D2A6692180035C7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				538A2D3A2A66A6030025CB56 /* Info.plist */,
-				F2C1A15D2A6692180035C7DF /* Info.plist */,
 				7539DE252A4994650015FA4F /* TrendyTravelApp.swift */,
 				F2C1A13E2A6531320035C7DF /* ViewModels */,
 				7539DE592A49980D0015FA4F /* Models */,

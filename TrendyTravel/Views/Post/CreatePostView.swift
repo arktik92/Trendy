@@ -39,11 +39,12 @@ struct CreatePostView: View {
                     .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
                     .filter { !$0.isEmpty }
                 
-                newPostImageName = postVm.uploadImageToServer()
-                postVm.savePosts(title: newPostTitle, imageName: newPostImageName, hashtags: hashtags, userID: user.id)
+                if let image {
+                    postVm.image = image
+                }
+                postVm.savePosts(title: newPostTitle, imageName: postVm.uploadImageToServer(), hashtags: hashtags, userID: user.id)
 
                 Task {
-                    
                     posts = await postVm.getPosts()
                 }
                 

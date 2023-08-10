@@ -152,20 +152,34 @@ class PostViewModel: ObservableObject {
         }.resume()
     }
     
-    func createHashtags(hashtag: String) -> [String] {
-        var hashtags: [String] = []
-        
-        hashtags.append(hashtag)
-        
-        return hashtags
+    func createPost( userID: Int, title: String, imageName: String, hashtags: [String]) {
+        if let userIndex = users.firstIndex(where: { $0.id == userID }) {
+            let newPostID = users[userIndex].posts.count + 1
+            let newPost = Post(id: newPostID, title: title, imageName: imageName, hashtags: hashtags, userID: userID)
+
+            // Vérifier si le post existe déjà
+            let existingPost = users[userIndex].posts.first { $0.title == newPost.title && $0.imageName == newPost.imageName }
+            guard existingPost == nil else {
+                // Le post existe déjà, ne pas ajouter en double
+                return
+            }
+
+            users[userIndex].posts.append(newPost)
+            savePosts(title: title, imageName: imageName, hashtags: hashtags, userID: userID)
+
+
+        }
     }
     
-    func deletePost(postID: Int) {
-        
-        guard let url = URL(string: "https://trendytravel.onrender.com/posts/\(postID)") else {
-            print("Error: cannot create URL")
-            return
+    func deletePost(userID: Int, postID: Int) {
+        if let userIndex = users.firstIndex(where: { $0.id == userID }) {
+            users[userIndex].posts.removeAll { $0.id == postID }
+            
+            
         }
+        
+        
+        guard let url = URL(string: "") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
@@ -209,7 +223,23 @@ class PostViewModel: ObservableObject {
     }
     
     func editPost(userID: Int, postID: Int, newTitle: String, newImageName: String, newHashtags: [String]) {
-         
+            // Trouver l'utilisateur correspondant à l'ID fourni
+            guard let userIndex = users.firstIndex(where: { $0.id == userID }) else {
+                return // L'utilisateur n'a pas été trouvé, donc rien à faire
+            }
+            
+            // Trouver le post correspondant à l'ID fourni dans les posts de l'utilisateur
+            guard let postIndex = users[userIndex].posts.firstIndex(where: { $0.id == postID }) else {
+                return // Le post n'a pas été trouvé, donc rien à faire
+            }
+            
+            // Mettre à jour les données du post avec les nouvelles valeurs
+            users[userIndex].posts[postIndex].title = newTitle
+            users[userIndex].posts[postIndex].imageName = newImageName
+            users[userIndex].posts[postIndex].hashtags = newHashtags
+            
+            // Enregistrer les changements si nécessaire (vous pouvez implémenter cette fonctionnalité)
+            // savePosts(title: newTitle, imageName: newImageName, hashtags: newHashtags, userID: userID)
         }
     
 }

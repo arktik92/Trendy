@@ -81,7 +81,7 @@ struct PostCellView: View {
 
                     Button {
                         // Delete
-                        viewModel.deletePost(postID: post.id)
+                        viewModel.deletePost(userID: currentUser.id, postID: post.id)
                         Task {
                             posts = await viewModel.getPosts()
                         }

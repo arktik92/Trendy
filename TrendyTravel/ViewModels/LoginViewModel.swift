@@ -88,6 +88,7 @@ class LoginViewModel: ObservableObject {
                 emailAndPasswordIsValid = false
             }
         }
+        saveCredentialsToUserDefaults()
         return emailAndPasswordIsValid
     }
     
